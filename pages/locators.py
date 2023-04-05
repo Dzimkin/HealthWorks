@@ -3,6 +3,12 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocator:
     TITLE = (By.XPATH, "(//section[contains(.,'Welcome to HealthWorks Analytics™!Visual Intelligence™ Brought to Life for Your Organization')])[4]")
+    ANALYTICS = (By.XPATH, "//h3[contains(.,'Analytics')]")
+    DION = (By.XPATH, "//h3[contains(.,'Dìon®')]")
+    CASE_MANAGEMENT = (By.XPATH, "//h3[contains(.,'Case Management')]")
+    ADMINISTRATION = (By.XPATH, "//h3[contains(.,'Administration')]")
+    AUDIT_MANAGEMENT = (By.XPATH, "//h3[contains(.,'Audit Management')]")
+    CARDS = (By.XPATH, "//div[@class='cards']/div")
 
 
 class LoginPageLocator:
