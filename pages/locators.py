@@ -23,5 +23,8 @@ class LoginPageLocator:
     ERROR_MESSAGE = (By.XPATH, "(//div[contains(.,'You must agree to HWA Terms and Conditions')])[4]")
 
 
-class AnaliticsPageLocator:
+class AnalyticsPageLocator:
     URL_ANALYTICS = (By.XPATH, "(//h3[@class='card-info__title'])[1]")
+    ANALYTICS_TITLE = (By.XPATH, "//span[contains(@title,'Dashboards list')]")
+    ANALYTICS_SUBSCRIBED_TAB = (By.XPATH, "//div[@role='tab'][contains(.,'Subscribed')]")
+    ANALYTICS_DASHBOARD_CARDS = (By.XPATH, "//div[@class='ant-layout-sider-children']")

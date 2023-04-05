@@ -1,6 +1,7 @@
 from .locators import LoginPageLocator
 import time
 
+
 class LoginPage:
     def __init__(self, browser):
         self.browser = browser
@@ -24,4 +25,3 @@ class LoginPage:
     def is_error_displayed(self):
         time.sleep(1)
         return self.browser.find_element(*LoginPageLocator.ERROR_MESSAGE).is_displayed()
-

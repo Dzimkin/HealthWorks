@@ -1,6 +1,7 @@
 import pytest
 from .pages.login_page import LoginPage
 from .pages.main_page import MainPage
+from .pages.analytics_page import AnalyticsPage
 
 
 @pytest.mark.need_run
@@ -38,3 +39,11 @@ class TestWithLogin:
         assert main_page.is_case_management_displayed(), "Case management is not displayed"
         assert main_page.is_administration_displayed(), "Administration is not displayed"
         assert main_page.is_audit_management_displayed(), "Audit management is not displayed"
+
+    @pytest.mark.need_run
+    def test_analytics(self, browser):
+        analytics_page = AnalyticsPage(browser)
+        analytics_page.load_analytics()
+        assert analytics_page.is_analytics_title_displayed(), "Dashboards list is not displayed"
+        assert analytics_page.is_analytics_subscribed_tab_displayed(), "Subscribed tab is not displayed"
+        assert analytics_page.is_analytics_dashboard_cards_displayed(), "Dashboard cards is not displayed"
