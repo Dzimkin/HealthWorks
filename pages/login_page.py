@@ -7,7 +7,7 @@ class LoginPage:
 
     def load(self):
         self.browser.get(LoginPageLocator.URL)
-        time.sleep(10)
+        time.sleep(5)
 
     def set_username(self, username):
         self.browser.find_element(*LoginPageLocator.USERNAME).send_keys(username)

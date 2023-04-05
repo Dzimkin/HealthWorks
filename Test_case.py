@@ -3,29 +3,38 @@ from .pages.login_page import LoginPage
 from .pages.main_page import MainPage
 
 
-@pytest.fixture(scope="function", autouse=True)
-def login_page(browser):
-    return LoginPage(browser)
-
-
-@pytest.fixture(scope="function", autouse=True)
-def main_page(browser):
-    return MainPage(browser)
-
-@pytest.mark.need_review
-def test_without_agree(login_page, main_page):
+@pytest.mark.need_run
+def test_without_agree(browser):
+    login_page = LoginPage(browser)
     login_page.load()
     login_page.set_username("forndldoka7+admin@gmail.com")
     login_page.set_password("1234567Zx!")
+    login_page = LoginPage(browser)
     login_page.submit()
-    assert login_page.is_error_displayed()
+    assert login_page.is_error_displayed(), "Error is not displayed"
 
 
-@pytest.mark.need_review
-def test_with_agree(login_page, main_page):
-    login_page.load()
-    login_page.set_username("forndldoka7+admin@gmail.com")
-    login_page.set_password("1234567Zx!")
-    login_page.agree_to_terms()
-    login_page.submit()
-    assert main_page.is_title_displayed()
+class TestWithLogin:
+
+    @pytest.fixture(scope='function', autouse=True)
+    def setup(self, browser):
+        login_page = LoginPage(browser)
+        login_page.load()
+        login_page.set_username("forndldoka7+admin@gmail.com")
+        login_page.set_password("1234567Zx!")
+        login_page.agree_to_terms()
+        login_page.submit()
+
+    @pytest.mark.need_review
+    def test_with_agree(self, browser):
+        main_page = MainPage(browser)
+        assert main_page.is_title_displayed(), "Title is not displayed"
+
+    @pytest.mark.need_review
+    def test_main_page(self, browser):
+        main_page = MainPage(browser)
+        assert main_page.is_analytics_displayed(), "Analytics is not displayed"
+        assert main_page.is_dion_displayed(), "Dìon® is not displayed"
+        assert main_page.is_case_management_displayed(), "Case management is not displayed"
+        assert main_page.is_administration_displayed(), "Administration is not displayed"
+        assert main_page.is_audit_management_displayed(), "Audit management is not displayed"
