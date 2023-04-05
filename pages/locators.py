@@ -2,7 +2,16 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocator:
-    TITLE = (By.XPATH, "(//section[contains(.,'Welcome to HealthWorks Analytics™!Visual Intelligence™ Brought to Life for Your Organization')])[4]")
+    TITLE = (By.XPATH,
+             "(//section[contains(.,'Welcome to HealthWorks Analytics™!"
+             "Visual Intelligence™ Brought to Life for Your Organization')])[4]")
+
+    ANALYTICS = (By.XPATH, "(//h3[@class='card-info__title'])[1]")
+    DION = (By.XPATH, "(//h3[@class='card-info__title'])[2]")
+    CASE_MANAGEMENT = (By.XPATH, "(//h3[@class='card-info__title'])[3]")
+    ADMINISTRATION = (By.XPATH, "(//h3[@class='card-info__title'])[4]")
+    AUDIT_MANAGEMENT = (By.XPATH, "(//h3[@class='card-info__title'])[5]")
+    CARDS = (By.XPATH, "//div[@class='cards']/div")
 
 
 class LoginPageLocator:
@@ -13,3 +22,6 @@ class LoginPageLocator:
     SUBMIT_BUTTON = (By.XPATH, "//button[contains(.,'Submit')]")
     ERROR_MESSAGE = (By.XPATH, "(//div[contains(.,'You must agree to HWA Terms and Conditions')])[4]")
 
+
+class AnaliticsPageLocator:
+    URL_ANALYTICS = (By.XPATH, "(//h3[@class='card-info__title'])[1]")
