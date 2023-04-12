@@ -28,3 +28,10 @@ class AnalyticsPageLocator:
     ANALYTICS_TITLE = (By.XPATH, "//span[contains(@title,'Dashboards list')]")
     ANALYTICS_SUBSCRIBED_TAB = (By.XPATH, "//div[@role='tab'][contains(.,'Subscribed')]")
     ANALYTICS_DASHBOARD_CARDS = (By.XPATH, "//div[@class='ant-layout-sider-children']")
+
+class DionPageLocator:
+    URL_DION = (By.XPATH, "(//h3[@class='card-info__title'])[2]")
+    DION_TITLE = (By.XPATH, "//span[contains(@title,'Dìon® settings')]")
+    DION_ETL_DB_CONFIGURATION_TAB = (By.XPATH, "(//span[contains(.,'ETL DB Configuration')])[2]")
+    DION_TOPICS_HEALTH_ASSESSMENT_DASHBOARD = (By.XPATH, "//a[contains(.,'Health Assessment Dashboard')]")
+    DION_TOPICS_HEALTH_ASSESSMENT_DASHBOARD = (By.XPATH, "//a[contains(.,'Health Assessment Dashboard')]")
