@@ -34,3 +34,10 @@ class DionPageLocator:
     DION_TITLE = (By.XPATH, "//span[contains(@title,'Dìon® settings')]")
     DION_ETL_DB_CONFIGURATION_TAB = (By.XPATH, "(//span[contains(.,'ETL DB Configuration')])[2]")
     DION_TOPICS_HEALTH_ASSESSMENT_DASHBOARD = (By.XPATH, "//a[contains(.,'Health Assessment Dashboard')]")
+
+class CaseManagementPageLocator:
+    URL_CASE_MANAGEMENT = (By.XPATH, "(//h3[@class='card-info__title'])[3]")
+    CASE_MANAGEMENT_TITLE = (By.XPATH, "//span[@class='header-title'][contains(.,'My Cases')]")
+    CASE_MANAGEMENT_PARTICIPANT = (By.XPATH, "//th[contains(.,'Participant')]")
+
+
