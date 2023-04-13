@@ -2,6 +2,7 @@ import pytest
 from .pages.login_page import LoginPage
 from .pages.main_page import MainPage
 from .pages.analytics_page import AnalyticsPage
+from .pages.dion_page import DionPage
 
 
 @pytest.mark.need_run
@@ -47,3 +48,11 @@ class TestWithLogin:
         assert analytics_page.is_analytics_title_displayed(), "Dashboards list is not displayed"
         assert analytics_page.is_analytics_subscribed_tab_displayed(), "Subscribed tab is not displayed"
         assert analytics_page.is_analytics_dashboard_cards_displayed(), "Dashboard cards is not displayed"
+
+    @pytest.mark.need_run
+    def test_dion(self, browser):
+        dion_page = DionPage(browser)
+        dion_page.load_dion()
+        assert dion_page.is_dion_title_displayed(), "ETL DB Configuration is not displayed"
+        assert dion_page.is_dion_etl_db_configuration_tab_displayed(), \
+            "Health Assessment Dashboard tab is not displayed"
