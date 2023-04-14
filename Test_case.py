@@ -4,7 +4,7 @@ from .pages.main_page import MainPage
 from .pages.analytics_page import AnalyticsPage
 from .pages.dion_page import DionPage
 from .pages.case_management_page import CaseManagementPage
-
+from .pages.administration_page import AdministrationPage
 
 @pytest.mark.need_run
 def test_without_agree(browser):
@@ -64,3 +64,16 @@ class TestWithLogin:
         case_management_page.load_case_management()
         assert case_management_page.is_case_management_title_displayed(), "My Cases is not displayed"
         assert case_management_page.is_case_management_participant_displayed(), "PARTICIPANT is not displayed"
+
+    @pytest.mark.need_run
+    def test_administration(self, browser):
+        administration_page = AdministrationPage(browser)
+        administration_page.load_administration()
+        assert administration_page.is_administration_title_displayed(), "Title Users is not displayed"
+        assert administration_page.is_administration_add_user_button_enabled(), "Add User button is disabled"
+        assert administration_page.is_administration_import_user_button_enabled(), "Import User button is disabled"
+        assert administration_page.is_administration_force_log_out_button_disabled(), "Force Log Out button is enabled"
+        assert administration_page.is_administration_add_user_button_disabled(), "Request Reset Password button is enabled"
+        assert administration_page.is_administration_deactivate_button_disabled(), "Deactivate button is enabled"
+        assert administration_page.is_administration_users_displayed(), "Table with list of Users is not displayed"
+

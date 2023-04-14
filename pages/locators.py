@@ -40,4 +40,15 @@ class CaseManagementPageLocator:
     CASE_MANAGEMENT_TITLE = (By.XPATH, "//span[@class='header-title'][contains(.,'My Cases')]")
     CASE_MANAGEMENT_PARTICIPANT = (By.XPATH, "//th[contains(.,'Participant')]")
 
+class AdministrationPageLocator:
+    URL_ADMINISTRATION = (By.XPATH, "(//h3[@class='card-info__title'])[4]")
+    ADMINISTRATION_TITLE = (By.XPATH, "//span[contains(@title,'Users')]")
+    ADMINISTRATION_ADD_USER = (By.XPATH, "//span[contains(.,'Add User')]")
+    ADMINISTRATION_IMPORT_USER = (By.XPATH, "//span[contains(.,'Import users')]")
+    ADMINISTRATION_DEACTIVATE = (By.XPATH, "(//span[contains(.,'Deactivate')])[1]")
+    ADMINISTRATION_FORCE_LOG_OUT = (By.XPATH, "(//span[contains(.,'Force Log Out')])[1]")
+    ADMINISTRATION_REQUEST_RESET_PASSWORD = (By.XPATH, "(//span[contains(.,'Request reset password')])[1]")
+    ADMINISTRATION_USERS = (By.XPATH, '//tr[contains(@class, "ant-table")]')
+
+
 
