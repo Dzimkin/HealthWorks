@@ -52,4 +52,6 @@ class AdministrationPageLocator:
 
 class AuditManagementPageLocator:
     URL_AUDIT_MANAGEMENT = (By.XPATH, "(//h3[@class='card-info__title'])[5]")
+    AUDIT_MANAGEMENT_TITLE = (By.XPATH, "//span[contains(@title,'Audit log')]")
+
 
