@@ -50,5 +50,6 @@ class AdministrationPageLocator:
     ADMINISTRATION_REQUEST_RESET_PASSWORD = (By.XPATH, "(//span[contains(.,'Request reset password')])[1]")
     ADMINISTRATION_USERS = (By.XPATH, '//tr[contains(@class, "ant-table")]')
 
-
+class AuditManagementPageLocator:
+    URL_AUDIT_MANAGEMENT = (By.XPATH, "(//h3[@class='card-info__title'])[5]")
 
