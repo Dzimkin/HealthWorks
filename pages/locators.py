@@ -29,16 +29,19 @@ class AnalyticsPageLocator:
     ANALYTICS_SUBSCRIBED_TAB = (By.XPATH, "//div[@role='tab'][contains(.,'Subscribed')]")
     ANALYTICS_DASHBOARD_CARDS = (By.XPATH, "//div[@class='ant-layout-sider-children']")
 
+
 class DionPageLocator:
     URL_DION = (By.XPATH, "(//h3[@class='card-info__title'])[2]")
     DION_TITLE = (By.XPATH, "//span[contains(@title,'Dìon® settings')]")
     DION_ETL_DB_CONFIGURATION_TAB = (By.XPATH, "(//span[contains(.,'ETL DB Configuration')])[2]")
     DION_TOPICS_HEALTH_ASSESSMENT_DASHBOARD = (By.XPATH, "//a[contains(.,'Health Assessment Dashboard')]")
 
+
 class CaseManagementPageLocator:
     URL_CASE_MANAGEMENT = (By.XPATH, "(//h3[@class='card-info__title'])[3]")
     CASE_MANAGEMENT_TITLE = (By.XPATH, "//span[@class='header-title'][contains(.,'My Cases')]")
     CASE_MANAGEMENT_PARTICIPANT = (By.XPATH, "//th[contains(.,'Participant')]")
+
 
 class AdministrationPageLocator:
     URL_ADMINISTRATION = (By.XPATH, "(//h3[@class='card-info__title'])[4]")
@@ -50,8 +53,7 @@ class AdministrationPageLocator:
     ADMINISTRATION_REQUEST_RESET_PASSWORD = (By.XPATH, "(//span[contains(.,'Request reset password')])[1]")
     ADMINISTRATION_USERS = (By.XPATH, '//tr[contains(@class, "ant-table")]')
 
+
 class AuditManagementPageLocator:
     URL_AUDIT_MANAGEMENT = (By.XPATH, "(//h3[@class='card-info__title'])[5]")
     AUDIT_MANAGEMENT_TITLE = (By.XPATH, "//span[contains(@title,'Audit log')]")
-
-

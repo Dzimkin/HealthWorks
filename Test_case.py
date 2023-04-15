@@ -7,6 +7,7 @@ from .pages.case_management_page import CaseManagementPage
 from .pages.administration_page import AdministrationPage
 from .pages.audit_management_page import AuditManagementPage
 
+
 @pytest.mark.need_run
 def test_without_agree(browser):
     login_page = LoginPage(browser)
@@ -74,7 +75,8 @@ class TestWithLogin:
         assert administration_page.is_administration_add_user_button_enabled(), "Add User button is disabled"
         assert administration_page.is_administration_import_user_button_enabled(), "Import User button is disabled"
         assert administration_page.is_administration_force_log_out_button_disabled(), "Force Log Out button is enabled"
-        assert administration_page.is_administration_add_user_button_disabled(), "Request Reset Password button is enabled"
+        assert administration_page.is_administration_add_user_button_disabled(), \
+            "Request Reset Password button is enabled"
         assert administration_page.is_administration_deactivate_button_disabled(), "Deactivate button is enabled"
         assert administration_page.is_administration_users_displayed(), "Table with list of Users is not displayed"
 
@@ -83,5 +85,3 @@ class TestWithLogin:
         audit_management_page = AuditManagementPage(browser)
         audit_management_page.load_audit_management()
         assert audit_management_page.is_audit_management_title_displayed(), "Audit log is not displayed"
-
-
