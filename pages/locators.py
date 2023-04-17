@@ -44,13 +44,12 @@ class CaseManagementPageLocator:
     CASE_MANAGEMENT_ITEM = (By.XPATH, "//div[@class='ant-menu-submenu-title'][contains(.,'Case management')]")
     CASE_MANAGEMENT_NEW_REFERRALS = (By.XPATH, "//span[@class='ant-menu-title-content'][contains(.,'New Referrals')]")
     CASE_MANAGEMENT_ADD_NEW_REFERRAL = (By.XPATH, "//button[contains(.,'Add new referral')]")
-    # CASE_MANAGEMENT_Participant name = (By.XPATH, "//button[contains(.,'Add new referral')]")
-    # CASE_MANAGEMENT_Participant name = (By.XPATH, "//button[contains(.,'Add new referral')]")
-    # CASE_MANAGEMENT_REFERRAL date = (By.XPATH, "//button[contains(.,'Add new referral')]")
-    # CASE_MANAGEMENT_REFERRAL Program = (By.XPATH, "//button[contains(.,'Add new referral')]")
-    # CASE_MANAGEMENT_Contact number = (By.XPATH, "//button[contains(.,'Add new referral')]")
-    # CASE_MANAGEMENT_ADD_NEW_REFERRAL = (By.XPATH, "//button[contains(.,'Add new referral')]")
-
+    CASE_MANAGEMENT_PARTICIPANT_NAME = (By.XPATH, "//input[@placeholder='Enter participant name here...']")
+    CASE_MANAGEMENT_REFERRAL_SOURCE = (By.XPATH, "//input[@placeholder='Enter referral source here...']")
+    CASE_MANAGEMENT_REFERRAL_DATE = (By.XPATH, "//input[contains(@id,'date')][@placeholder='Select date here...']")
+    CASE_MANAGEMENT_REFERRAL_PROGRAM = (By.XPATH, "//input[@placeholder='Enter referral program here...']")
+    CASE_MANAGEMENT_CONTACT_NUMBER = (By.XPATH, "//input[@placeholder='(000) 000-0000']")
+    CASE_MANAGEMENT_SUBMIT = (By.XPATH, "///span[contains(.,'Submit')]")
 
 
 class AdministrationPageLocator:
@@ -68,4 +67,3 @@ class AuditManagementPageLocator:
     URL_AUDIT_MANAGEMENT = (By.XPATH, "//h3[contains(.,'Audit Management')]")
     AUDIT_MANAGEMENT_TITLE = (By.XPATH, "//span[contains(@title,'Audit log')]")
     AUDIT_MANAGEMENT_TABLE_WITH_LOG = (By.XPATH, "//table[contains(@style, 'table-layout')]")
-
