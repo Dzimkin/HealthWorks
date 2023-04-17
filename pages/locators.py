@@ -3,14 +3,13 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocator:
     TITLE = (By.XPATH,
-             "(//section[contains(.,'Welcome to HealthWorks Analytics™!"
-             "Visual Intelligence™ Brought to Life for Your Organization')])[4]")
+             "//div[@class='ant-page-header-heading'][contains(.,'Welcome to HealthWorks Analytics™!')]")
 
-    ANALYTICS = (By.XPATH, "(//h3[@class='card-info__title'])[1]")
-    DION = (By.XPATH, "(//h3[@class='card-info__title'])[2]")
-    CASE_MANAGEMENT = (By.XPATH, "(//h3[@class='card-info__title'])[3]")
-    ADMINISTRATION = (By.XPATH, "(//h3[@class='card-info__title'])[4]")
-    AUDIT_MANAGEMENT = (By.XPATH, "(//h3[@class='card-info__title'])[5]")
+    ANALYTICS = (By.XPATH, "//h3[@class='card-info__title'][contains(.,'Analytics')]")
+    DION = (By.XPATH, "//h3[@class='card-info__title'][contains(.,'Dìon®')]")
+    CASE_MANAGEMENT = (By.XPATH, "//h3[@class='card-info__title'][contains(.,'Case Management')]")
+    ADMINISTRATION = (By.XPATH, "//h3[@class='card-info__title'][contains(.,'Administration')]")
+    AUDIT_MANAGEMENT = (By.XPATH, "//h3[@class='card-info__title'][contains(.,'Audit Management')]")
     CARDS = (By.XPATH, "//div[@class='cards']/div")
 
 
@@ -20,40 +19,43 @@ class LoginPageLocator:
     PASSWORD = (By.ID, "basic_password")
     AGREE_CHECKBOX = (By.ID, "basic_agree")
     SUBMIT_BUTTON = (By.XPATH, "//button[contains(.,'Submit')]")
-    ERROR_MESSAGE = (By.XPATH, "(//div[contains(.,'You must agree to HWA Terms and Conditions')])[4]")
+    ERROR_MESSAGE = (By.XPATH, "//div[@class='ant-notification-notice-message']"
+                               "[contains(.,'You must agree to HWA Terms and Conditions')]")
 
 
 class AnalyticsPageLocator:
-    URL_ANALYTICS = (By.XPATH, "(//h3[@class='card-info__title'])[1]")
+    URL_ANALYTICS = (By.XPATH, "//h3[@class='card-info__title'][contains(.,'Analytics')]")
     ANALYTICS_TITLE = (By.XPATH, "//span[contains(@title,'Dashboards list')]")
     ANALYTICS_SUBSCRIBED_TAB = (By.XPATH, "//div[@role='tab'][contains(.,'Subscribed')]")
     ANALYTICS_DASHBOARD_CARDS = (By.XPATH, "//div[@class='ant-layout-sider-children']")
 
 
 class DionPageLocator:
-    URL_DION = (By.XPATH, "(//h3[@class='card-info__title'])[2]")
+    URL_DION = (By.XPATH, "//h3[@class='card-info__title'][contains(.,'Dìon®')]")
     DION_TITLE = (By.XPATH, "//span[contains(@title,'Dìon® settings')]")
-    DION_ETL_DB_CONFIGURATION_TAB = (By.XPATH, "(//span[contains(.,'ETL DB Configuration')])[2]")
+    DION_ETL_DB_CONFIGURATION_TAB = (By.XPATH, "//button[contains(.,'ETL DB Configuration')]")
     DION_TOPICS_HEALTH_ASSESSMENT_DASHBOARD = (By.XPATH, "//a[contains(.,'Health Assessment Dashboard')]")
 
 
 class CaseManagementPageLocator:
-    URL_CASE_MANAGEMENT = (By.XPATH, "(//h3[@class='card-info__title'])[3]")
+    URL_CASE_MANAGEMENT = (By.XPATH, "//h3[@class='card-info__title'][contains(.,'Case Management')]")
     CASE_MANAGEMENT_TITLE = (By.XPATH, "//span[@class='header-title'][contains(.,'My Cases')]")
-    CASE_MANAGEMENT_PARTICIPANT = (By.XPATH, "//th[contains(.,'Participant')]")
+    CASE_MANAGEMENT_PARTICIPANT = (By.XPATH, "//table[contains(@style, 'table-layout')]")
 
 
 class AdministrationPageLocator:
-    URL_ADMINISTRATION = (By.XPATH, "(//h3[@class='card-info__title'])[4]")
+    URL_ADMINISTRATION = (By.XPATH, "//h3[@class='card-info__title'][contains(.,'Administration')]")
     ADMINISTRATION_TITLE = (By.XPATH, "//span[contains(@title,'Users')]")
-    ADMINISTRATION_ADD_USER = (By.XPATH, "//span[contains(.,'Add User')]")
-    ADMINISTRATION_IMPORT_USER = (By.XPATH, "//span[contains(.,'Import users')]")
-    ADMINISTRATION_DEACTIVATE = (By.XPATH, "(//span[contains(.,'Deactivate')])[1]")
-    ADMINISTRATION_FORCE_LOG_OUT = (By.XPATH, "(//span[contains(.,'Force Log Out')])[1]")
-    ADMINISTRATION_REQUEST_RESET_PASSWORD = (By.XPATH, "(//span[contains(.,'Request reset password')])[1]")
+    ADMINISTRATION_ADD_USER = (By.XPATH, "//button[contains(.,'Add User')]")
+    ADMINISTRATION_IMPORT_USER = (By.XPATH, "//button[contains(.,'Import users')]")
+    ADMINISTRATION_DEACTIVATE = (By.XPATH, "//button[contains(.,'Deactivate')]")
+    ADMINISTRATION_FORCE_LOG_OUT = (By.XPATH, "//button[contains(.,'Force Log Out')]")
+    ADMINISTRATION_REQUEST_RESET_PASSWORD = (By.XPATH, "//button[contains(.,'Request reset password')]")
     ADMINISTRATION_USERS = (By.XPATH, '//tr[contains(@class, "ant-table")]')
 
 
 class AuditManagementPageLocator:
-    URL_AUDIT_MANAGEMENT = (By.XPATH, "(//h3[@class='card-info__title'])[5]")
+    URL_AUDIT_MANAGEMENT = (By.XPATH, "//h3[contains(.,'Audit Management')]")
     AUDIT_MANAGEMENT_TITLE = (By.XPATH, "//span[contains(@title,'Audit log')]")
+    AUDIT_MANAGEMENT_TABLE_WITH_LOG = (By.XPATH, "//table[contains(@style, 'table-layout')]")
+

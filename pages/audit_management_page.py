@@ -17,3 +17,7 @@ class AuditManagementPage:
     def is_audit_management_title_displayed(self):
         time.sleep(10)
         return self.browser.find_element(*AuditManagementPageLocator.AUDIT_MANAGEMENT_TITLE).is_displayed()
+
+    def is_audit_management_table_with_logs_displayed(self):
+        time.sleep(10)
+        return self.browser.find_element(*AuditManagementPageLocator.AUDIT_MANAGEMENT_TABLE_WITH_LOG).is_displayed()

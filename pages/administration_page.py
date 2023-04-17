@@ -15,25 +15,28 @@ class AdministrationPage:
         return self.browser.find_element(*AdministrationPageLocator.ADMINISTRATION_TITLE).is_displayed()
 
     def is_administration_add_user_button_enabled(self):
-        time.sleep(10)
+        time.sleep(5)
         return self.browser.find_element(*AdministrationPageLocator.ADMINISTRATION_ADD_USER).is_enabled()
 
     def is_administration_import_user_button_enabled(self):
-        time.sleep(10)
+        time.sleep(5)
         return self.browser.find_element(*AdministrationPageLocator.ADMINISTRATION_IMPORT_USER).is_enabled()
 
     def is_administration_deactivate_button_disabled(self):
-        time.sleep(10)
-        return not self.browser.find_element(*AdministrationPageLocator.ADMINISTRATION_DEACTIVATE).is_enabled()
+        time.sleep(5)
+        return self.browser.find_element(*AdministrationPageLocator.ADMINISTRATION_DEACTIVATE).\
+            get_attribute('disabled')
 
     def is_administration_force_log_out_button_disabled(self):
-        time.sleep(10)
-        return not self.browser.find_element(*AdministrationPageLocator.ADMINISTRATION_FORCE_LOG_OUT).is_enabled()
+        time.sleep(5)
+        return self.browser.find_element(*AdministrationPageLocator.ADMINISTRATION_FORCE_LOG_OUT).\
+            get_attribute('disabled')
 
     def is_administration_add_user_button_disabled(self):
-        time.sleep(10)
-        return not self.browser.find_element(*AdministrationPageLocator.ADMINISTRATION_REQUEST_RESET_PASSWORD).is_enabled()
+        time.sleep(5)
+        return self.browser.find_element(*AdministrationPageLocator.ADMINISTRATION_REQUEST_RESET_PASSWORD).\
+            get_attribute('disabled')
 
     def is_administration_users_displayed(self):
-        time.sleep(10)
+        time.sleep(5)
         return self.browser.find_element(*AdministrationPageLocator.ADMINISTRATION_USERS).is_displayed()

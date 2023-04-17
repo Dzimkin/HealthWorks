@@ -35,7 +35,7 @@ class TestWithLogin:
         main_page = MainPage(browser)
         assert main_page.is_title_displayed(), "Title is not displayed"
 
-    @pytest.mark.need_runw
+    @pytest.mark.need_run
     def test_main_page(self, browser):
         main_page = MainPage(browser)
         assert main_page.is_analytics_displayed(), "Analytics is not displayed"
@@ -65,7 +65,8 @@ class TestWithLogin:
         case_management_page = CaseManagementPage(browser)
         case_management_page.load_case_management()
         assert case_management_page.is_case_management_title_displayed(), "My Cases is not displayed"
-        assert case_management_page.is_case_management_participant_displayed(), "PARTICIPANT is not displayed"
+        assert case_management_page.is_case_management_participant_displayed(), \
+            "Table with Participants is not displayed"
 
     @pytest.mark.need_run
     def test_administration(self, browser):
@@ -85,3 +86,4 @@ class TestWithLogin:
         audit_management_page = AuditManagementPage(browser)
         audit_management_page.load_audit_management()
         assert audit_management_page.is_audit_management_title_displayed(), "Audit log is not displayed"
+        assert audit_management_page.is_audit_management_table_with_logs_displayed(), "Table with logs is not displayed"
