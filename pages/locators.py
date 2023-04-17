@@ -41,6 +41,16 @@ class CaseManagementPageLocator:
     URL_CASE_MANAGEMENT = (By.XPATH, "//h3[@class='card-info__title'][contains(.,'Case Management')]")
     CASE_MANAGEMENT_TITLE = (By.XPATH, "//span[@class='header-title'][contains(.,'My Cases')]")
     CASE_MANAGEMENT_PARTICIPANT = (By.XPATH, "//table[contains(@style, 'table-layout')]")
+    CASE_MANAGEMENT_ITEM = (By.XPATH, "//div[@class='ant-menu-submenu-title'][contains(.,'Case management')]")
+    CASE_MANAGEMENT_NEW_REFERRALS = (By.XPATH, "//span[@class='ant-menu-title-content'][contains(.,'New Referrals')]")
+    CASE_MANAGEMENT_ADD_NEW_REFERRAL = (By.XPATH, "//button[contains(.,'Add new referral')]")
+    # CASE_MANAGEMENT_Participant name = (By.XPATH, "//button[contains(.,'Add new referral')]")
+    # CASE_MANAGEMENT_Participant name = (By.XPATH, "//button[contains(.,'Add new referral')]")
+    # CASE_MANAGEMENT_REFERRAL date = (By.XPATH, "//button[contains(.,'Add new referral')]")
+    # CASE_MANAGEMENT_REFERRAL Program = (By.XPATH, "//button[contains(.,'Add new referral')]")
+    # CASE_MANAGEMENT_Contact number = (By.XPATH, "//button[contains(.,'Add new referral')]")
+    # CASE_MANAGEMENT_ADD_NEW_REFERRAL = (By.XPATH, "//button[contains(.,'Add new referral')]")
+
 
 
 class AdministrationPageLocator:

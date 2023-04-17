@@ -87,3 +87,11 @@ class TestWithLogin:
         audit_management_page.load_audit_management()
         assert audit_management_page.is_audit_management_title_displayed(), "Audit log is not displayed"
         assert audit_management_page.is_audit_management_table_with_logs_displayed(), "Table with logs is not displayed"
+
+    @pytest.mark.run
+    def test_create_new_referral_manually(self, browser):
+        case_management_page = CaseManagementPage(browser)
+        case_management_page.load_case_management()
+        case_management_page.expand_left_menu()
+        case_management_page.click_new_referrals()
+        case_management_page.click_add_new_referral()
