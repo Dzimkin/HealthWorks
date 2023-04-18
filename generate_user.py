@@ -16,9 +16,9 @@ def generate_source():
 
 
 def generate_date():
-    date = ''
-    for x in range(6):
-        date += random.choice(list('1234567890'))
+    date = '03/03/2022'
+    # for x in range(6):
+    #     date += random.choice(list('1234567890'))
     return date
 
 

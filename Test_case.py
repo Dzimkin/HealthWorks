@@ -6,7 +6,8 @@ from .pages.dion_page import DionPage
 from .pages.case_management_page import CaseManagementPage
 from .pages.administration_page import AdministrationPage
 from .pages.audit_management_page import AuditManagementPage
-
+from .pages.add_user_page import AddUserPage
+import time
 
 @pytest.mark.need_run
 def test_without_agree(browser):
@@ -95,3 +96,14 @@ class TestWithLogin:
         case_management_page.expand_left_menu()
         case_management_page.click_new_referrals()
         case_management_page.click_add_new_referral()
+        add_user_page = AddUserPage(browser)
+        add_user_page.set_name()
+        add_user_page.set_source()
+        add_user_page.set_date()
+        add_user_page.set_program()
+        add_user_page.set_number()
+        add_user_page.email()
+        time.sleep(5)
+        add_user_page.submit()
+        assert add_user_page.is_message_displayed(), "Message is not displayed"
+
