@@ -14,11 +14,13 @@ def generate_source():
         source += random.choice(list('abcdefghigklmnopqrstuvyxwzABCDEFGHIGKLMNOPQRSTUVYXWZ'))
     return source
 
+
 def generate_date():
     date = ''
     for x in range(6):
         date += random.choice(list('1234567890'))
     return date
+
 
 def generate_program():
     program = ''
@@ -26,9 +28,9 @@ def generate_program():
         program += random.choice(list('abcdefghigklmnopqrstuvyxwzABCDEFGHIGKLMNOPQRSTUVYXWZ'))
     return program
 
+
 def generate_number():
     number = ''
     for x in range(10):
         number += random.choice(list('1234567890'))
     return number
-
