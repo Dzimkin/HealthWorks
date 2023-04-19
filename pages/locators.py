@@ -56,6 +56,8 @@ class CaseManagementPageLocator:
 
 
 
+
+
 class AdministrationPageLocator:
     URL_ADMINISTRATION = (By.XPATH, "//h3[@class='card-info__title'][contains(.,'Administration')]")
     ADMINISTRATION_TITLE = (By.XPATH, "//span[contains(@title,'Users')]")

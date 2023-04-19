@@ -9,6 +9,7 @@ from .pages.audit_management_page import AuditManagementPage
 from .pages.add_user_page import AddUserPage
 import time
 
+
 @pytest.mark.need_run
 def test_without_agree(browser):
     login_page = LoginPage(browser)
@@ -106,4 +107,7 @@ class TestWithLogin:
         time.sleep(5)
         add_user_page.submit()
         assert add_user_page.is_message_displayed(), "Message is not displayed"
-
+        time.sleep(5)
+        assert add_user_page.is_new_referral_displayed(), "New referral is not displayed"
+        time.sleep(5)
+ytHQO

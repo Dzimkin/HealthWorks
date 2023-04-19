@@ -1,5 +1,6 @@
 from .locators import CaseManagementPageLocator
 from generate_user import generate_name, generate_source, generate_date, generate_program, generate_number
+from selenium.webdriver.common.by import By
 import time
 
 
@@ -38,3 +39,27 @@ class AddUserPage:
     def is_message_displayed(self):
         time.sleep(5)
         return self.browser.find_element(*CaseManagementPageLocator.CASE_MANAGEMENT_MESSAGE).is_displayed()
+
+    def is_new_referral_displayed(self):
+        time.sleep(5)
+        # name = generate_name()
+        # source = generate_source()
+        # date = generate_date()
+        # program = generate_program()
+        # number = generate_number()
+        print(name)
+        print(source)
+        print(date)
+        print(program)
+        print(number)
+        name_selector = str(f"//td[contains(.,'{name}')]")
+        source_selector = str(f"//td[contains(.,'{source}')]")
+        date_selector = str(f"//td[contains(.,'{date}')]")
+        program_selector = str(f"//td[contains(.,'{program}')]")
+        number_selector = str(f"//td[contains(.,'{number}')]")
+        print(name_selector, source_selector, date_selector, program_selector, number_selector)
+        return self.browser.find_element(By.XPATH, name_selector).is_displayed() and \
+            self.browser.find_element(By.XPATH, source_selector).is_displayed() and \
+            self.browser.find_element(By.XPATH, date_selector).is_displayed() and \
+            self.browser.find_element(By.XPATH, program_selector).is_displayed() and \
+            self.browser.find_element(By.XPATH, number_selector).is_displayed()

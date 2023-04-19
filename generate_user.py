@@ -16,9 +16,13 @@ def generate_source():
 
 
 def generate_date():
-    date = '03/03/2022'
-    # for x in range(6):
-    #     date += random.choice(list('1234567890'))
+    date = '0'
+    for x in range(1):
+        date += random.choice(list('123456789'))
+        date += "/0"
+    for x in range(1):
+        date += random.choice(list('123456789'))
+        date += "/2022"
     return date
 
 
@@ -30,7 +34,7 @@ def generate_program():
 
 
 def generate_number():
-    number = ''
-    for x in range(10):
+    number = '(123) 456-'
+    for x in range(4):
         number += random.choice(list('1234567890'))
     return number
