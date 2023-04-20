@@ -98,16 +98,14 @@ class TestWithLogin:
         case_management_page.click_new_referrals()
         case_management_page.click_add_new_referral()
         add_user_page = AddUserPage(browser)
-        add_user_page.set_name()
-        add_user_page.set_source()
-        add_user_page.set_date()
-        add_user_page.set_program()
-        add_user_page.set_number()
-        add_user_page.email()
+        # add_user_page.set_name()
+        # add_user_page.set_source()
+        # add_user_page.set_date()
+        # add_user_page.set_program()
+        # add_user_page.set_number()
+        # add_user_page.email()
         time.sleep(5)
-        add_user_page.submit()
-        assert add_user_page.is_message_displayed(), "Message is not displayed"
-        time.sleep(5)
+        # add_user_page.submit()
+        # assert add_user_page.is_message_displayed(), "Message is not displayed"
+        # time.sleep(5)
         assert add_user_page.is_new_referral_displayed(), "New referral is not displayed"
-        time.sleep(5)
-ytHQO

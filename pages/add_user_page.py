@@ -41,12 +41,19 @@ class AddUserPage:
         return self.browser.find_element(*CaseManagementPageLocator.CASE_MANAGEMENT_MESSAGE).is_displayed()
 
     def is_new_referral_displayed(self):
+        name = generate_name()
+        self.browser.find_element(*CaseManagementPageLocator.CASE_MANAGEMENT_PARTICIPANT_NAME).send_keys(name)
+        source = generate_source()
+        self.browser.find_element(*CaseManagementPageLocator.CASE_MANAGEMENT_REFERRAL_SOURCE).send_keys(source)
+        date = generate_date()
+        self.browser.find_element(*CaseManagementPageLocator.CASE_MANAGEMENT_REFERRAL_DATE).send_keys(date)
+        program = generate_program()
+        self.browser.find_element(*CaseManagementPageLocator.CASE_MANAGEMENT_REFERRAL_PROGRAM).send_keys(program)
+        number = generate_number()
+        self.browser.find_element(*CaseManagementPageLocator.CASE_MANAGEMENT_CONTACT_NUMBER).send_keys(number)
+        self.browser.find_element(*CaseManagementPageLocator.CASE_MANAGEMENT_CONTACT_EMAIL).click()
+        self.browser.find_element(*CaseManagementPageLocator.CASE_MANAGEMENT_SUBMIT).click()
         time.sleep(5)
-        # name = generate_name()
-        # source = generate_source()
-        # date = generate_date()
-        # program = generate_program()
-        # number = generate_number()
         print(name)
         print(source)
         print(date)
@@ -59,7 +66,7 @@ class AddUserPage:
         number_selector = str(f"//td[contains(.,'{number}')]")
         print(name_selector, source_selector, date_selector, program_selector, number_selector)
         return self.browser.find_element(By.XPATH, name_selector).is_displayed() and \
-            self.browser.find_element(By.XPATH, source_selector).is_displayed() and \
-            self.browser.find_element(By.XPATH, date_selector).is_displayed() and \
-            self.browser.find_element(By.XPATH, program_selector).is_displayed() and \
-            self.browser.find_element(By.XPATH, number_selector).is_displayed()
+               self.browser.find_element(By.XPATH, source_selector).is_displayed() and \
+               self.browser.find_element(By.XPATH, date_selector).is_displayed() and \
+               self.browser.find_element(By.XPATH, program_selector).is_displayed() and \
+               self.browser.find_element(By.XPATH, number_selector).is_displayed()

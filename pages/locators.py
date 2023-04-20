@@ -53,6 +53,8 @@ class CaseManagementPageLocator:
     CASE_MANAGEMENT_SUBMIT = (By.XPATH, "//span[contains(.,'Submit')]")
     CASE_MANAGEMENT_MESSAGE = (By.XPATH, "// div[ @class ='ant-notification-notice-message']"
                                          "[contains(., 'The referral has been added successfully')]")
+    CASE_MANAGEMENT_NEW_REFERRALS_ADD = (By.XPATH, "//tr//td[contains(text(),'shdn')]")
+
 
 
 
