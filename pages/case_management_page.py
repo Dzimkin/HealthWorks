@@ -29,3 +29,8 @@ class CaseManagementPage:
     def click_add_new_referral(self):
         time.sleep(2)
         self.browser.find_element(*CaseManagementPageLocator.CASE_MANAGEMENT_ADD_NEW_REFERRAL).click()
+
+    def click_all_programs(self):
+        time.sleep(2)
+        self.browser.find_element(*CaseManagementPageLocator.CASE_MANAGEMENT_ALL_PROGRAMS).click()
+
